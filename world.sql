@@ -5425,13 +5425,42 @@ SELECT * FROM country; # Argentina population = 37032000, LifeExpectancy = 75.1
 SELECT * FROM country ORDER BY LifeExpectancy DESC; # Highest life expectancy, Andorra = 83.5
 SELECT * FROM city;
 SELECT * FROM country;
-SELECT * FROM country JOIN city;
+SHOW TABLES;
+SELECT * FROM city JOIN country ON CountryCode = 'ESP'; # Capital city of Spain = Madrid
+SELECT * FROM city WHERE CountryCode = 'ESP';
+SELECT * FROM countrylanguage;
+SELECT * FROM countrylanguage JOIN country ON region = 'southeast asia'; # Run again to show
+SELECT * FROM city WHERE city.Name LIKE "f%"; 
+SELECT COUNT('number') FROM city WHERE CountryCode = 'CHN'; #363
+SELECT * FROM country WHERE population IS NOT NULL AND population>0 ORDER BY population ASC; # Pitcarin, Population = 50
+SELECT COUNT('number') FROM country; # 239
+SELECT * FROM country ORDER BY SurfaceArea DESC; 
+SELECT * FROM city WHERE CountryCode = 'JPN' ORDER BY population DESC;
+SELECT * FROM country WHERE HeadOfState = 'Elisabeth II';
+SELECT * FROM country ORDER BY SurfaceArea/Population DESC;
+SELECT * FROM country WHERE GNP IS NOT NULL AND GNP>0 ORDER BY GNP DESC;
+SELECT * FROM country WHERE LifeExpectancy IS NOT NULL AND LifeExpectancy>0 ORDER BY LifeExpectancy ASC; # Zambia, LifeExpectancy = 37.2
+SELECT * FROM country GROUP BY GovernmentForm;
+SELECT COUNT(GovernmentForm) FROM country;
+SELECT COUNT(IndepYear) FROM country;
+SELECT * FROM CountryLanguage;
+SELECT DISTINCT * FROM CountryLanguage; # 14
+SELECT * FROM country GROUP BY GovernmentForm ORDER BY COUNT(GovernmentForm) DESC LIMIT 3; # 19
+SELECT * FROM CountryLanguage; 
+SELECT * FROM Country; # 16 & 17 left
 
 
 
 
 
 
-
+
+
+
+
+
+
+
+
 
 
